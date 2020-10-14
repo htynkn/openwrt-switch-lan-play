@@ -12,7 +12,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
+    - name: Get secret key
+      run: 'echo "$SECRET_KEY" > secrets.key'
+      shell: bash
+      env:
+        SSH_KEY: ${{secrets.SECRET_KEY}}
     - name: Build ipk
       run: ./build.sh https://downloads.openwrt.org/releases/19.07.3/targets/ramips/mt7620/openwrt-sdk-19.07.3-ramips-mt7620_gcc-7.5.0_musl.Linux-x86_64.tar.xz ramips/mt7620
 
@@ -27,6 +31,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Get secret key
+      run: 'echo "$SECRET_KEY" > secrets.key'
+      shell: bash
+      env:
+        SSH_KEY: ${{secrets.SECRET_KEY}}
 
     - name: Build ipk
       run: ./build.sh https://downloads.openwrt.org/releases/19.07.3/targets/ramips/mt7621/openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz ramips/mt7621
@@ -42,7 +51,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
+    - name: Get secret key
+      run: 'echo "$SECRET_KEY" > secrets.key'
+      shell: bash
+      env:
+        SSH_KEY: ${{secrets.SECRET_KEY}}
     - name: Build ipk
       run: ./build.sh https://downloads.openwrt.org/releases/19.07.3/targets/x86/64/openwrt-sdk-19.07.3-x86-64_gcc-7.5.0_musl.Linux-x86_64.tar.xz x86/64
 
@@ -56,7 +69,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
+    - name: Get secret key
+      run: 'echo "$SECRET_KEY" > secrets.key'
+      shell: bash
+      env:
+        SSH_KEY: ${{secrets.SECRET_KEY}}
     - name: Build ipk
       run: ./build.sh https://downloads.openwrt.org/releases/19.07.3/targets/ramips/rt3883/openwrt-sdk-19.07.3-ramips-rt3883_gcc-7.5.0_musl.Linux-x86_64.tar.xz ramips_rt3883
 
@@ -70,7 +87,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
+    - name: Get secret key
+      run: 'echo "$SECRET_KEY" > secrets.key'
+      shell: bash
+      env:
+        SSH_KEY: ${{secrets.SECRET_KEY}}
     - name: Build ipk
       run: ./build.sh https://downloads.openwrt.org/releases/19.07.3/targets/armvirt/64/openwrt-sdk-19.07.3-armvirt-64_gcc-7.5.0_musl.Linux-x86_64.tar.xz armvirt_64
 

@@ -26,5 +26,3 @@ RUN rm -rf ${targetFolder} && mkdir -p ${targetFolder} && find . | grep lan-play
 RUN gcc scripts/mkhash.c -o mkhash && mv mkhash /usr/local/bin && chmod +x /usr/local/bin/mkhash
 RUN cd ${targetFolder} && /sdk/openwrt-sdk/scripts/ipkg-make-index.sh . >> Packages
 RUN cd ${targetFolder} && gzip -k Packages
-RUN ls /keys
-RUN find ${targetFolder} | xargs zip -ur target.zip
